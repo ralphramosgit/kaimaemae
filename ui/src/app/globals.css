@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f7fcfd;
+  --foreground: #0c3b50;
+}
+
+html,
+body {
+  max-width: 100vw;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Frosted island-glass surface used by panels and the modal. */
+  .glass-panel {
+    background: linear-gradient(
+      160deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(247, 252, 253, 0.86) 100%
+    );
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(162, 219, 239, 0.55);
+  }
+
+  .glass-panel-tinted {
+    background: linear-gradient(
+      160deg,
+      rgba(240, 246, 236, 0.92) 0%,
+      rgba(245, 236, 217, 0.82) 100%
+    );
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(212, 180, 122, 0.45);
+  }
+
+  .text-shadow-island {
+    text-shadow: 0 2px 18px rgba(12, 59, 80, 0.25);
+  }
+
+  /* Thin, themed scrollbar for inner scroll regions. */
+  .scroll-island {
+    scrollbar-width: thin;
+    scrollbar-color: #9fc588 transparent;
+  }
+  .scroll-island::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scroll-island::-webkit-scrollbar-thumb {
+    background-color: #9fc588;
+    border-radius: 9999px;
+  }
+  .scroll-island::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Loading shimmer fill. */
+.shimmer-fill {
+  background: linear-gradient(
+    90deg,
+    rgba(205, 236, 247, 0) 0%,
+    rgba(255, 255, 255, 0.75) 50%,
+    rgba(205, 236, 247, 0) 100%
+  );
+  background-size: 480px 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
