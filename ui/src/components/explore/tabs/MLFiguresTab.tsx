@@ -6,6 +6,9 @@ import {
   Zap, TrendingUp, Trees, CheckCircle2, XCircle, AlertTriangle,
   Target, GitBranch, Layers,
 } from "lucide-react";
+import { MLBoostingViz } from "./MLBoostingViz";
+import { MLRegressionViz } from "./MLRegressionViz";
+import { MLForestViz } from "./MLForestViz";
 
 // ---------------------------------------------------------------------------
 // Types
@@ -753,6 +756,8 @@ function XGBClassifierTab() {
           </ul>
         </div>
       </div>
+
+      <MLBoostingViz />
     </div>
   );
 }
@@ -880,6 +885,8 @@ function XGBRegressorTab() {
           </ul>
         </div>
       </div>
+
+      <MLRegressionViz />
     </div>
   );
 }
@@ -1021,6 +1028,8 @@ function RandomForestTab() {
           </ul>
         </div>
       </div>
+
+      <MLForestViz />
     </div>
   );
 }
