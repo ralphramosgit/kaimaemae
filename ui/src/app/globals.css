@@ -10,11 +10,13 @@
 html,
 body {
   max-width: 100vw;
+  /* Match the ocean shader background so the browser never paints white
+     before the canvas or CSS loads. */
+  background: #062233;
 }
 
 body {
   color: var(--foreground);
-  background: var(--background);
   font-family: var(--font-geist-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
