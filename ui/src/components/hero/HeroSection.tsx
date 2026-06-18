@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Waves, Database } from "lucide-react";
@@ -15,6 +16,22 @@ export function HeroSection({ onEnter }: { onEnter: () => void }) {
       <BackgroundShader />
 
       <div className="relative z-10 flex max-w-2xl flex-col items-center gap-4 text-center">
+        <motion.div
+          className="overflow-hidden rounded-2xl bg-white shadow-xl"
+          initial={{ opacity: 0, scale: 0.8, y: 12 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ type: "spring", stiffness: 260, damping: 18 }}
+        >
+          <Image
+            src="/kaichecks-logo.png"
+            alt="KaiChecks"
+            width={72}
+            height={72}
+            className="block"
+            priority
+          />
+        </motion.div>
+
         <motion.h1
           className="text-balance text-6xl font-bold tracking-tight text-white sm:text-7xl"
           style={{ textShadow: "0 2px 16px rgba(0,0,0,0.7)" }}

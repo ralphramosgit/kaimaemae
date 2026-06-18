@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-import { CloudRain, CalendarDays, Home, Waves, Database } from "lucide-react";
+import { CloudRain, CalendarDays, Home, Database } from "lucide-react";
 
 import { Button } from "@/components/ui/Button";
 import { useSimulation } from "@/context/SimulationContext";
@@ -18,8 +19,14 @@ export function AppHeader({ onRestart }: { onRestart: () => void }) {
   return (
     <header className="pointer-events-none absolute inset-x-0 top-0 z-30 flex items-center justify-between gap-3 px-4 py-3">
       <div className="glass-panel pointer-events-auto flex items-center gap-2.5 rounded-2xl px-3.5 py-2 shadow-panel-sm">
-        <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-ocean-500 text-white">
-          <Waves className="h-4.5 w-4.5" />
+        <span className="flex h-8 w-8 overflow-hidden rounded-xl bg-white shadow-sm">
+          <Image
+            src="/kaichecks-logo.png"
+            alt="KaiChecks"
+            width={32}
+            height={32}
+            className="block object-contain"
+          />
         </span>
         <div className="leading-tight">
           <div className="text-sm font-bold tracking-tight text-ocean-800">

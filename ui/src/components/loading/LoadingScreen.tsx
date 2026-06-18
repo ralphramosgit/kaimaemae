@@ -1,7 +1,7 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Waves } from "lucide-react";
 
 import { BackgroundShader } from "@/components/ui/background-shader";
 
@@ -37,17 +37,24 @@ export function LoadingScreen() {
 
       <div className="relative z-10 flex flex-col items-center text-center">
         <motion.div
-          className="flex h-20 w-20 items-center justify-center rounded-3xl bg-white/20 shadow-panel ring-1 ring-white/30 backdrop-blur"
+          className="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-white/30"
           initial={{ scale: 0.7, opacity: 0, rotate: -8 }}
           animate={{ scale: 1, opacity: 1, rotate: 0 }}
           transition={{ type: "spring", stiffness: 260, damping: 18 }}
         >
-          <motion.span
-            animate={{ y: [0, -4, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          <motion.div
+            animate={{ y: [0, -5, 0], scale: [1, 1.04, 1] }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <Waves className="h-10 w-10 text-white" />
-          </motion.span>
+            <Image
+              src="/kaichecks-logo.png"
+              alt="KaiChecks"
+              width={80}
+              height={80}
+              className="block"
+              priority
+            />
+          </motion.div>
         </motion.div>
 
         <motion.h1

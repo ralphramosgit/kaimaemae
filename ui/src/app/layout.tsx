@@ -14,9 +14,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Kaichecks | Oahu Beach Water Safety Simulator",
+  title: "KaiChecks | Oahu Beach Water Safety Simulator",
   description:
     "Simulate rainfall across Oahu and explore predicted beach water safety, ranked beaches, forecasts, and findings.",
+  icons: {
+    icon: "/kaichecks-logo.png",
+    shortcut: "/kaichecks-logo.png",
+    apple: "/kaichecks-logo.png",
+  },
 };
 
 export default function RootLayout({
